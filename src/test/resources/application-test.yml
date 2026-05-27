@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  
+  flyway:
+    enabled: false
+
+jwt:
+  issuer: auth-service-test
+  audience: application-api-test
+  access-token-expiry: 15m
+  refresh-token-expiry: 30d
+
+rate-limit:
+  login:
+    max-attempts: 10
+    window: 1m
+
+logging:
+  level:
+    com.authservice: DEBUG
+
